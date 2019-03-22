@@ -111,6 +111,8 @@ $autoload['language'] = array();
 
 $autoload['model'] = array();
 
+/* custom settings */
+$autoload['libraries'] = array('database');
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

@@ -15,7 +15,8 @@
 	#nav a:link, a:visited {border-radius: 12px 12px 12px 12px; }
 	</style> -->
 </head>
-<body background='assets/images/gym_image.jpg'>
+<body>
+<!-- <body> -->
 <!-- THIS IS WHERE CUSTOM CODE GOES-->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -57,9 +58,6 @@
     </form>
   </div>
 </nav>
-
-
 <!-- ORIGINAL -->
-
 </body>
 </html>

@@ -24,7 +24,7 @@
 	</style>
 </head>
 <body>
-	<div id="background_gym"></div>
+	<div id="background_gym">
 	<div class='container'>
 		<section class='hero home-bg container-fluid py-5 mt-3 mb-3'>
 		<div class="jumbotron">
@@ -33,6 +33,7 @@
 			<p class="p-centre">Click one of the navigation links to begin.</p>
 		</div>
 	</section>
+	</div>
 	<div>
 </body>
 </html>

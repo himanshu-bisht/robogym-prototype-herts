@@ -1,20 +1,26 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="css/style.css">
   <title>Transparent navbar</title>
   <style>
     body{
       margin:0;
-      background:url('Gym.jpeg');
+      padding: 0px;
+
 
     }
+
+
     .nav{
     width:100%;
-    backgroud:#000033;
+
     height:100px;
-    margin-top:100px;
-    opacity:0.6;
+    margin-top:0px;
+    opacity:0.9;
+    loc
     }
     ul{
     list-style:none;
@@ -27,23 +33,51 @@
     margin-top:30px;
     }
     a{
-      width:150px;
+      width:2000px;
       color:blue;
       display:black;
       text-decoration:none;
       font-size:20px;
       text-align:center;
       padding:10px;
-      border-radius:10px;
-      font-family:Century Gothic;
+      border-bottom: 4px solid black;
+      font-family:century Gothic;
       font-weight:bold;
     }
     a:hover{
     background:#669900;
     transition:0.6s;
 
+
     }
+    .container{
+          width: 100%;
+          height:100vh;
+          margin-top: 100px
+          position:relative;
+          background-image: url(../assets/images/Gym1.jpg);
+          background-size:cover;
+        }
+
+
+    .container .inner{
+      postition:absolute;
+      width: 100%;
+      background-color: #0009;
+      transform: translate(0,150%);
+      top: 200%;
+      Left:50%;
+      border-bottom: 4px solid #fff;
+      border-top: 4px solid #fff;
+      }
+      .container .inner p{
+        color:  #fff;
+        font-size: 45px;
+        font-family: arial;
     }
+
+    }
+
   </style>
   </head>
   <body>
@@ -54,6 +88,10 @@
   <li> <a href = "#"> MembershipCard</a></li>
   <li> <a href = "#"> GymGols</a></li>
   </ul>
+  <div class="container">
+    <div class="inner">
+      <p>Welcome RoboGym</p>
+    </div>
   </div>
-  </body>
+
 </html>

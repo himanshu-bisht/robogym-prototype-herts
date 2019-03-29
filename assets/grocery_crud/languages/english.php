@@ -37,32 +37,32 @@
 	$lang['form_upload_delete'] 	= 'delete';
 	$lang['form_button_clear'] 		= 'Clear';
 
-	$lang['delete_success_message'] = 'Data successfully deleted from the database.';
-	$lang['delete_error_message'] 	= 'Data could not be deleted from the database.';
+	$lang['delete_success_message'] = 'Your data has been successfully deleted from the database.';
+	$lang['delete_error_message'] 	= 'Your data was not deleted from the database.';
 
 	/* Javascript messages */
-	$lang['alert_add_form']			= 'Data has not been saved.\\nAre you sure you want to go back to the list?';
-	$lang['alert_edit_form']		= 'Changes have not been saved.\\nAre you sure you want to go back to the list?';
-	$lang['alert_delete']			= 'Are you sure you want to delete?';
+	$lang['alert_add_form']			= 'The data you had insert may not be saved.\\nAre you sure you want to go back to list?';
+	$lang['alert_edit_form']		= 'The data you had change may not be saved.\\nAre you sure you want to go back to list?';
+	$lang['alert_delete']			= 'Are you sure that you want to delete this record?';
 
 	$lang['insert_error']			= 'An error has occurred on insert.';
 	$lang['update_error']			= 'An error has occurred on saving.';
 
 	/* Added in version 1.2.1 */
 	$lang['set_relation_title']		= 'Select {field_display_as}';
-	$lang['list_record']			= 'Record - ';
+	$lang['list_record']			= 'Record';
 	$lang['form_inactive']			= 'inactive';
 	$lang['form_active']			= 'active';
 
 	/* Added in version 1.2.2 */
-	$lang['form_save_and_go_back']	= 'Save';
-	$lang['form_update_and_go_back']= 'Update';
+	$lang['form_save_and_go_back']	= 'Save and go back to list';
+	$lang['form_update_and_go_back']= 'Update and go back to list';
 
 	/* Upload functionality */
 	$lang['string_delete_file'] 	= "Deleting file";
 	$lang['string_progress'] 		= "Progress: ";
 	$lang['error_on_uploading'] 	= "An error has occurred on uploading.";
-	$lang['message_prompt_delete_file'] 	= "Are you sure you want to delete this file?";
+	$lang['message_prompt_delete_file'] 	= "Are you sure that you want to delete this file?";
 
 	$lang['error_max_number_of_files'] 	= "You can only upload one file each time.";
 	$lang['error_accept_file_types'] 	= "You are not allow to upload this kind of extension.";
@@ -76,3 +76,22 @@
 	
 	/* Added in version 1.4 */
 	$lang['list_view'] = 'View';
+
+	/* Added in version 1.5.1 */
+	$lang['ui_day'] = 'dd';
+	$lang['ui_month'] = 'mm';
+	$lang['ui_year'] = 'yyyy';
+
+	/* Added in version 1.5.2 */
+	$lang['list_more'] = 'More';
+
+	/* Added in version 1.5.6 */
+	$lang['list_search_column'] = 'Search {column_name}';
+
+	/* Added in version 1.5.8 */
+	$lang['alert_delete_multiple'] = 'Are you sure that you want to delete those {items_amount} items?';
+	$lang['alert_delete_multiple_one'] = 'Are you sure that you want to delete this 1 item?';
+
+	/* Added in version 1.6.1 */
+	$lang['list_clone'] = 'Clone';
+

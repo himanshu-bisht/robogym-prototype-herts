@@ -81,16 +81,15 @@
 			oSettings.aoColumns.push( oCol );
 			
 			/* Add a column specific filter */
-			
 			if ( oSettings.aoPreSearchCols[ iCol ] === undefined || oSettings.aoPreSearchCols[ iCol ] === null )
 			{
 				oSettings.aoPreSearchCols[ iCol ] = $.extend( {}, DataTable.models.oSearch );
 			}
 			else
 			{
-				var oPre = oSettings.aoPreSearchCols[ iCol ];			
+				var oPre = oSettings.aoPreSearchCols[ iCol ];
 				
-				/*Don't require that the user must specify bRegex, bSmart or bCaseInsensitive */
+				/* Don't require that the user must specify bRegex, bSmart or bCaseInsensitive */
 				if ( oPre.bRegex === undefined )
 				{
 					oPre.bRegex = true;
@@ -98,7 +97,7 @@
 				
 				if ( oPre.bSmart === undefined )
 				{
-					oPre.bSmart = false;
+					oPre.bSmart = true;
 				}
 				
 				if ( oPre.bCaseInsensitive === undefined )
@@ -106,7 +105,6 @@
 					oPre.bCaseInsensitive = true;
 				}
 			}
-			
 			
 			/* Use the column options function to initialise classes etc */
 			_fnColumnOptions( oSettings, iCol, null );
@@ -5413,12 +5411,11 @@
 		 *      // Sometime later - filter...
 		 *      oTable.fnFilter( 'test string' );
 		 *    } );
-		 */		
-		
-		this.fnFilter = function(sInput, iColumn, bRegex, bSmart, bShowGlobal, bCaseInsensitive )
+		 */
+		this.fnFilter = function( sInput, iColumn, bRegex, bSmart, bShowGlobal, bCaseInsensitive )
 		{
 			var oSettings = _fnSettingsFromNode( this[DataTable.ext.iApiIndex] );
-		
+			
 			if ( !oSettings.oFeatures.bFilter )
 			{
 				return;
@@ -5426,12 +5423,12 @@
 			
 			if ( bRegex === undefined || bRegex === null )
 			{
-				bRegex = true;
+				bRegex = false;
 			}
 			
 			if ( bSmart === undefined || bSmart === null )
 			{
-				bSmart = false;
+				bSmart = true;
 			}
 			
 			if ( bShowGlobal === undefined || bShowGlobal === null )
@@ -5447,7 +5444,6 @@
 			if ( iColumn === undefined || iColumn === null )
 			{
 				/* Global filter */
-	
 				_fnFilterComplete( oSettings, {
 					"sSearch":sInput+"",
 					"bRegex": bRegex,
@@ -5475,7 +5471,6 @@
 				} );
 				_fnFilterComplete( oSettings, oSettings.oPreviousSearch, 1 );
 			}
-			
 		};
 		
 		
@@ -7321,14 +7316,14 @@
 		 *  @type boolean
 		 *  @default false
 		 */
-		"bRegex": true,
+		"bRegex": false,
 	
 		/**
 		 * Flag to indicate if DataTables is to use its smart filtering or not.
 		 *  @type boolean
 		 *  @default true
 		 */
-		"bSmart": false
+		"bSmart": true
 	};
 	
 	

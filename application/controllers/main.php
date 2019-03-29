@@ -13,6 +13,7 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
+		$this->load->library('session');
 		$this->load->view('header');
 		$this->load->view('home');
 	}
@@ -175,10 +176,12 @@ public function GymCard()
 	$crud->set_theme('datatables');
 	$crud->set_table('gym_card');
 	$crud->set_subject('gym_card');
-	$crud->fields( 'staff_id', 'membership');
+	$crud->fields( 'staff_id', 'membership', 'valid_upto', 'created_on');
   $crud->set_relation('staff_id', 'gym_member', '{staff_card} - {staff_name}');
 	$crud->set_relation('membership', 'membership_type', 'description');
   $crud->display_as('staff_id', 'Staff');
+	$crud->display_as('valid_upto', 'Valid untill');
+	$crud->display_as('created_on', 'Created on');
 	$crud->display_as('membership', 'Member Type');
 
 	$output = $crud->render();

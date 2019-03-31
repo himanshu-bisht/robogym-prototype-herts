@@ -15,6 +15,13 @@ class Main extends CI_Controller {
 	public function index()
 	{
 		$this->load->library('session');
+		$this->load->view('homepage');
+		$this->load->view('home');
+	}
+
+	public function index2()
+	{
+		$this->load->library('session');
 		$this->load->view('header');
 		$this->load->view('home');
 	}

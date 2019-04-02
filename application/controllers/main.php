@@ -34,19 +34,22 @@ public function GymMember()
 	$crud->set_theme('datatables');
 	$crud->set_table('gym_member');
 	$crud->set_subject('gym_member');
-	$crud->columns('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'access_type', 'staff_pay', 'staff_card', 'gym_goals');
-	$crud->fields('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'access_type', 'staff_pay', 'staff_card', 'gym_goals');
-	$crud->required_fields('staff_id', 'staff_name', 'department', 'access_type', 'staff_email', 'address', 'staff_pay', 'staff_card', 'gym_goals');
-	$crud->set_relation_n_n('gym_goals', 'individual_gym_goals', 'gym_goals', 'staff_id', 'id', 'description' );
+	$crud->columns('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'staff_type', 'staff_pay', 'staff_goals');
+
+	$crud->fields('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'staff_type', 'staff_pay', 'staff_goals');
 	$crud->set_relation('staff_pay', 'pay_grade', 'pay_scale');
+	$crud->set_relation('staff_type', 'staff_role', 'staff_type_description');
+	$crud->set_relation_n_n('staff_goals', 'individual_gym_goals', 'gym_goals', 'staff_id', 'goal_id', 'description');;
+
+	$crud->required_fields('staff_id', 'staff_name', 'department', 'staff_type', 'staff_email', 'address', 'staff_pay', 'staff_goals');
 	$crud->display_as('staff_id', 'Staff ID');
 	$crud->display_as('staff_name', 'Name');
 	$crud->display_as('department', 'Department');
-	$crud->display_as('access_type', 'Access Type');
+	$crud->display_as('staff_type', 'Staff Type');
 	$crud->display_as('staff_email', 'Email');
 	$crud->display_as('address', 'Address');
 	$crud->display_as('staff_pay', 'Pay grade');
-	$crud->display_as('staff_card', 'Card ID');
+	$crud->display_as('staff_goals', 'Goals');
 
 	$output = $crud->render();
 	$this->mem_output($output);
@@ -66,13 +69,15 @@ public function GymCard()
 	$crud->set_theme('datatables');
 	$crud->set_table('gym_card');
 	$crud->set_subject('gym_card');
-	$crud->fields( 'staff_id', 'membership', 'valid_upto', 'created_on');
-  $crud->set_relation('staff_id', 'gym_member', '{staff_card} - {staff_name}');
+	$crud->fields( 'card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
+  $crud->set_relation('staff_id', 'gym_member', 'staff_name');
 	$crud->set_relation('membership', 'membership_type', 'description');
+	$crud->display_as('card_id', 'Card Id');
   $crud->display_as('staff_id', 'Staff');
 	$crud->display_as('valid_upto', 'Valid untill');
-	$crud->display_as('created_on', 'Created on');
+	$crud->display_as('valid_thru', 'Created on');
 	$crud->display_as('membership', 'Member Type');
+	$crud->display_as('isExpired', 'Expired');
 
 	$output = $crud->render();
 	$this->card_output($output);
@@ -117,7 +122,7 @@ public function IndividualGymGoals()
 	$crud->set_relation('staff_id', 'gym_member', '{staff_id} - {staff_name}');
 	$crud->set_relation('goal_id', 'gym_goals', 'description');
 	$crud->display_as('id', 'ID');
-	$crud->display_as('staff_id', 'Goal');
+	$crud->display_as('staff_id', 'Staff');
 	$crud->display_as('goal_id', 'goal_id');
 
 	$output = $crud->render();

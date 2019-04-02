@@ -52,10 +52,7 @@
 		      </li>
 				</ul>
   </div>
-</nav>
-
-
+</nav>	
 <!-- ORIGINAL -->
-
 </body>
 </html>

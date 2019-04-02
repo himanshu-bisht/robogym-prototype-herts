@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<title>RoboGym Website</title>
+<title>RoboGym</title>
 
 </head>
     <body>

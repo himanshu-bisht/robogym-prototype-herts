@@ -19,5 +19,7 @@ foreach($css_files as $file): ?>
     <div>
 		<?php echo $output; ?>
     </div>
+
 </body>
+
 </html>

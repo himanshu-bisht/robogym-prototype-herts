@@ -21,15 +21,14 @@
   <script src="<?php echo base_url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');?>"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="<?php echo base_url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');?>" 
+	<link rel="stylesheet" href="<?php echo base_url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');?>"
 
 </head>
 <body>
 <!--- footer------>
 <section id="footer">
   <div class="container">
-    <p>Made With <i class="fa fa-heart-o"></i>
-    by team blue </p>
+    <p allign='text-center'><i class="fa fa-cogs" aria-hidden="true"></i>  Powered By by team blue </p>
   </div>
 </section>
 <!--footer end-------->

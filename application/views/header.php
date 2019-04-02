@@ -31,8 +31,11 @@
         <a class="nav-link" href='<?php echo site_url('main/GymMember')?>'>Members</a>
       </li>
 			<li class="nav-item active">
-        <a class="nav-link" href='<?php echo site_url('main/GymCard')?>'>Cards</a>
+        <a class="nav-link" href='<?php echo site_url('main/GymCard')?>'>Cards v1 </a>
       </li>
+			<li class="nav-item active">
+				<a class="nav-link" href='<?php echo site_url('main/ElegantGymCard')?>'> Card v2 </a>
+			</li>
 			<li class="nav-item active">
         <a class="nav-link" href='<?php echo site_url('main/GymGoals')?>'>Goals</a>
       </li>

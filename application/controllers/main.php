@@ -77,15 +77,79 @@ public function GymCard()
 	$crud->display_as('valid_thru', 'Created on');
 	$crud->display_as('membership', 'Member Type');
 	$crud->display_as('isExpired', 'Expired');
-
 	$output = $crud->render();
-	$this->card_output($output);
+	$this->card_v1_output($output);
 }
 
-function card_output($output = null)
+function card_v1_output($output = null)
 {
 	$this->load->view('card_view.php', $output);
 }
+
+
+public function ElegantGymCard()
+{
+	$this->load->view('header');
+	$crud = new grocery_CRUD();
+	$crud->set_theme('datatables');
+	$crud->set_table('gym_card');
+	$crud->set_subject('gym_card');
+	$crud->columns('card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
+
+	$crud->fields( 'card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
+  $crud->set_relation('staff_id', 'gym_member', 'staff_name');
+	$crud->set_relation('membership', 'membership_type', 'description');
+	$crud->display_as('card_id', 'Card Id');
+  $crud->display_as('staff_id', 'Staff');
+	$crud->display_as('valid_upto', 'Valid untill');
+	$crud->display_as('valid_thru', 'Created on');
+	$crud->display_as('membership', 'Member Type');
+	$crud->display_as('isExpired', 'Expired');
+	$crud->callback_column('card_id', array($this,'_callback_gymcard_state'));
+	$output = $crud->render();
+	$this->card_v2_output($output);
+}
+
+public function _callback_gymcard_state($value, $row)
+{
+	if ($row->membership == '3'){
+
+		if ($row->isExpired == '1') {
+
+			return "<span style='color:green'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
+		}
+		else {
+			return "<span style='color:green'><strong>".$row->card_id."</strong></span>";
+		}
+	}
+
+	elseif ($row->membership == '2') {
+		if ($row->isExpired == '1') {
+
+			return "<span style='color:blue'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
+		}
+		else {
+			return "<span style='color:blue'><strong>".$row->card_id."</strong></span>";
+		}
+	}
+
+	elseif ($row->membership == '1') {
+		if ($row->isExpired == '1') {
+
+			return "<span style='color:black'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
+		}
+		else {
+			return "<span style='color:black'><strong>".$row->card_id."</strong></span>";
+		}
+	}
+
+}
+
+function card_v2_output($output = null)
+{
+	$this->load->view('card_view.php', $output);
+}
+
 
 
 public function GymGoals()

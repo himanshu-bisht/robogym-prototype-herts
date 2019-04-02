@@ -38,7 +38,6 @@ public function GymMember()
 
 	$crud->fields('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'staff_type', 'staff_pay', 'staff_goals');
 	$crud->set_relation('staff_pay', 'pay_grade', 'pay_scale');
-	$crud->set_relation('staff_type', 'staff_role', 'staff_type_description');
 	$crud->set_relation_n_n('staff_goals', 'individual_gym_goals', 'gym_goals', 'staff_id', 'goal_id', 'description');;
 
 	$crud->required_fields('staff_id', 'staff_name', 'department', 'staff_type', 'staff_email', 'address', 'staff_pay', 'staff_goals');

@@ -41,10 +41,10 @@
       </li>
 			<!-- <li class="nav-item active">
 				<a class="nav-link" href='<?php echo site_url('main/blank')?>'>Blank Page</a>
-			</li>
+			</li> -->
 			<li class="nav-item active">
 				<a class="nav-link" href='<?php echo site_url('main/querynav')?>'>Queries</a>
-			</li> -->
+			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 					<li class="nav-item active">
@@ -52,7 +52,7 @@
 		      </li>
 				</ul>
   </div>
-</nav>	
+</nav>
 <!-- ORIGINAL -->
 </body>
 </html>

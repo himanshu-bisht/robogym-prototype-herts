@@ -5,6 +5,7 @@
 	<meta name='RoboGym' content='Welcome to RoboGym!'>
 	<mera name='Author' content='RoboGym'>
 	<title> Welcome to the Homepage of RoboGym</title>
+	<link rel="stylesheet" herf="assets/statics/bootstrap/css/style.css">
 	<link rel="stylesheet" href="assets/statics/bootstrap/css/bootstrap.min.css">
   <script src='assets/statics/bootstrap/js/bootstrap.min.js'></script>
 	<link rel="stylesheet" href="<?php echo base_url('assets/statics/bootstrap/css/style.css');?>">
@@ -28,7 +29,7 @@
 <!--- footer------>
 <section id="footer">
   <div class="container">
-    <p allign='text-center'><i class="fa fa-cogs" aria-hidden="true"></i>  Powered By by team blue </p>
+    <p allign='text-center'><i class="fa fa-cogs" aria-hidden="true"></i>  Powered By  team blue </p>
   </div>
 </section>
 <!--footer end-------->

@@ -5,6 +5,13 @@
 <head>
 <title>RoboGym</title>
 
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </head>
     <body>
       <!---NavigarionBar---->
@@ -50,27 +57,30 @@
         <div id="headerSlider" class="carousel slide" date-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#headerSlider" data-slide-to="1"></li>
-            <li data-target="#headerSlider" data-slide-to="2"></li>
+            <li data-target="#headerSlider" data-slide-to="1" ></li>
+            <li data-target="#headerSlider" data-slide-to="2" ></li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="<?php echo base_url('assets/images/Gym1.jpg');?>" class="d-block img-fluid" >
-            <div class="carousel-caption">
-              <h5>Imagine It</h5>
+              <img class="d-block w-100" src="<?php echo base_url('assets/images/Gym1.jpg');?>" class="d-block img-fluid" >
+              <div class="carousel-caption">
+              <h5 style="color: #fff;
+              font-size: 100px;">Imagine It</h5>
             </div>
             </div>
             <div class="carousel-item">
-              <img src="<?php echo base_url('assets/images/Gym2.jpeg');?>" class="d-block img-fluid" >
+              <img clAss="d-block w-100" src="<?php echo base_url('assets/images/Gym2.jpeg');?>" class="d-block img-fluid" >
             <div class="carousel-caption">
-              <h5>Try It</h5>
+              <h5 style="color: #fff;
+              font-size: 100px;">Try It</h5>
             </div>
           </div>
             <div class="carousel-item">
-              <img src="<?php echo base_url('assets/images/Gym3.jpeg');?>" class="d-block img-fluid" >
+              <img class="d-block w-100" src="<?php echo base_url('assets/images/Gym3.jpg');?>" class="d-block img-fluid" >
 
             <div class="carousel-caption">
-              <h5>Love It</h5>
+              <h5 style="color: #fff;
+              font-size: 100px;">Love It</h5>
             </div>
             </div>
           </div>
@@ -95,23 +105,23 @@
     We are RoboGym We are best gym ever
 
 </div>
-<button type="button" class="btn btn-primary">Read More</button>
+
 
 </div>
   <div class="col-md-6 skills-bar">
-    <p>Adobe Photoshop</p>
+    <p>Customer Satisfaction</p>
     <div class="progress">
     <div class="progress-bar" style="width:80%">80%</div>
     </div>
-    <p>UI Design</p>
+    <p>Yearly Welcome Gym</p>
     <div class="progress">
     <div class="progress-bar" style="width:85%">85%</div>
     </div>
-    <p>Word Press</p>
+    <p>Equipment Management</p>
     <div class="progress">
     <div class="progress-bar" style="width:75%">75%</div>
   </div>
-    <p>Graphics Designing</p>
+    <p>Staff Attitude</p>
     <div class="progress">
     <div class="progress-bar" style="width:70%">70%</div>
   </div>
@@ -119,7 +129,14 @@
 
       </section>
 <!---Services----->
-<section id="services">
+<section id="services" style="
+ background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(assets/images/Gym4.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #efefef !important;
+  background-attachment: fixed;
+  padding-top: 50px;
+  padding-bottom: 50px;">
   <div class="container">
     <h1>Our Services</h1>
     <div class="row services">
@@ -230,12 +247,18 @@
       <div class="single-price">
         <div class="price-head">
           <h2>By Month</h2>
-          <p>£100<span>pre month</span></p>
+          <p>£100<span>Per Month</span></p>
         </div>
         <div class="price-contect">
         <ul>
-          <li>free equipment</li>
-          <li>1 hour yoga class</li>
+          <li>Free Equipment</li>
+          <li>1 Hour Yoga Class</li>
+          <li>    </li>
+          <li>     </li>
+          <li>    </li>
+          <li>    </li>
+
+
         </ul>
         </div>
         <div class="price-button">
@@ -247,13 +270,15 @@
       <div class="single-price">
         <div class="price-head">
           <h2>By 6 Month</h2>
-          <p>£100<span>pre month</span></p>
+          <p>£90<span>Per Month</span></p>
         </div>
         <div class="price-contect">
         <ul>
-          <li>free equipment</li>
-          <li>8 hour yoga class</li>
-          <li>swimming pool</li>
+          <li>Free Equipment</li>
+          <li>8 Hour Yoga Class</li>
+          <li>Swimming Pool</li>
+          <li>        </li>
+          <li>    </li>
         </ul>
         </div>
         <div class="price-button">
@@ -265,14 +290,14 @@
       <div class="single-price">
         <div class="price-head">
           <h2>By 12 Month</h2>
-          <p>£100<span>pre month</span></p>
+          <p>£75<span>Per Month</span></p>
         </div>
         <div class="price-contect">
         <ul>
-          <li>free equipment</li>
-          <li>24 hour yoga class</li>
-          <li>swimming pool</li>
-          <li>free coffee everyday</li>
+          <li>Free Equipment</li>
+          <li>24 Hour Yoga Class</li>
+          <li>Swimming Pool</li>
+          <li>Free Coffee Everyday</li>
         </ul>
         </div>
         <div class="price-button">

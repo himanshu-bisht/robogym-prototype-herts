@@ -39,11 +39,11 @@
 .nav-link
 {
   color: #555!important;
-  font-weight:600;
+  font-weight:0;
   font-size: 16px;
 }
 /*-------slider------*/
-#Slider
+#slider
 {
   width:100%;
 }
@@ -56,8 +56,9 @@
 }
 .carousel-caption h5
 {
-  color: #fff;
-  font-size: 42px;
+  color: black;
+  font-size: 46px;
+
 }
 /*-----about----*/
 #about
@@ -93,8 +94,7 @@
 /*------------Services-----*/
 #services
 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))
-  ,url(../../assets/images/Gym4.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url('../statics/images/Gym4.jpg');
   background-size: cover;
   background-position: center;
   color: #efefef !important;
@@ -102,6 +102,7 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 #services h1
 {
   text-align: center;

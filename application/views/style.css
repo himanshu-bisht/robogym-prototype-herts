@@ -22,6 +22,7 @@
 {
   float: right;
   text-align: left;
+  color: red;
 }
 #nav-bar ul li a:hover
 {
@@ -39,7 +40,7 @@
 .nav-link
 {
   color: #555!important;
-  font-weight:600;
+  font-weight:6;
   font-size: 16px;
 }
 /*-------slider------*/
@@ -57,7 +58,7 @@
 .carousel-caption h5
 {
   color: #fff;
-  font-size: 42px;
+  font-size:10px;
 }
 /*-----about----*/
 #about
@@ -93,8 +94,7 @@
 /*------------Services-----*/
 #services
 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8))
-  ,url(../../assets/images/Gym4.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.8)), url(assets/images/Gym4.jpg);
   background-size: cover;
   background-position: center;
   color: #efefef !important;

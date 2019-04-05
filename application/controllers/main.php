@@ -38,7 +38,7 @@ public function GymMember()
 
 	$crud->fields('staff_id', 'staff_name', 'staff_email', 'address', 'department', 'staff_type', 'staff_pay', 'staff_goals');
 	$crud->set_relation('staff_pay', 'pay_grade', 'pay_scale');
-	$crud->set_relation_n_n('staff_goals', 'individual_gym_goals', 'gym_goals', 'staff_id', 'goal_id', 'description');;
+	$crud->set_relation_n_n('staff_goals', 'individual_gym_goals', 'gym_goals', 'staff_id', 'goal_id', 'description');
 
 	$crud->required_fields('staff_id', 'staff_name', 'department', 'staff_type', 'staff_email', 'address', 'staff_pay', 'staff_goals');
 	$crud->display_as('staff_id', 'Staff ID');
@@ -59,43 +59,14 @@ function mem_output($output = null)
 	$this->load->view('mem_view.php', $output);
 }
 
-
-
 public function GymCard()
 {
 	$this->load->view('header');
 	$crud = new grocery_CRUD();
-	$crud->set_theme('datatables');
-	$crud->set_table('gym_card');
-	$crud->set_subject('gym_card');
-	$crud->fields( 'card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
-  $crud->set_relation('staff_id', 'gym_member', 'staff_name');
-	$crud->set_relation('membership', 'membership_type', 'description');
-	$crud->display_as('card_id', 'Card Id');
-  $crud->display_as('staff_id', 'Staff');
-	$crud->display_as('valid_upto', 'Valid untill');
-	$crud->display_as('valid_thru', 'Created on');
-	$crud->display_as('membership', 'Member Type');
-	$crud->display_as('isExpired', 'Expired');
-	$output = $crud->render();
-	$this->card_v1_output($output);
-}
-
-function card_v1_output($output = null)
-{
-	$this->load->view('card_view.php', $output);
-}
-
-
-public function ElegantGymCard()
-{
-	$this->load->view('header');
-	$crud = new grocery_CRUD();
-	$crud->set_theme('datatables');
+	// $crud->set_theme('datatables');
 	$crud->set_table('gym_card');
 	$crud->set_subject('gym_card');
 	$crud->columns('card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
-
 	$crud->fields( 'card_id', 'staff_id', 'membership', 'valid_upto', 'valid_thru', 'isExpired');
   $crud->set_relation('staff_id', 'gym_member', 'staff_name');
 	$crud->set_relation('membership', 'membership_type', 'description');
@@ -104,48 +75,47 @@ public function ElegantGymCard()
 	$crud->display_as('valid_upto', 'Valid untill');
 	$crud->display_as('valid_thru', 'Created on');
 	$crud->display_as('membership', 'Member Type');
-	$crud->display_as('isExpired', 'Expired');
-	$crud->callback_column('card_id', array($this,'_callback_gymcard_state'));
+	$crud->display_as('isExpired', 'Status');
+	$crud->callback_column($this->unique_field_name('membership'), array($this,'card_membership_color'));
+	$crud->callback_column('isExpired', array($this,'card_status'));
+
 	$output = $crud->render();
-	$this->card_v2_output($output);
+	$this->card_output($output);
 }
 
-public function _callback_gymcard_state($value, $row)
+public function unique_field_name($field_name) {
+	    return 's'.substr(md5($field_name),0,8); //This s is because is better for a string to begin with a letter and not with a number
+}
+
+public function card_status($value, $row)
 {
-	if ($row->membership == '3'){
+	if ($row->isExpired == '1') {
 
-		if ($row->isExpired == '1') {
-
-			return "<span style='color:green'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
+			return "<pre style='color:green'><p style='color:red'><font size='4'><strong>Expired</strong><font size='4'></pre>";
 		}
 		else {
-			return "<span style='color:green'><strong>".$row->card_id."</strong></span>";
+			return "<pre style='color:green'><font size='4'><strong>Active</strong></font></pre>";
 		}
+}
+
+public function card_membership_color($value, $row)
+{
+	echo 'this works';
+	if ($row->membership == '1') {
+		return "<pre style='color:black'><p><font size='4'><strong>Standard</strong><font size='4'></pre>";
 	}
 
 	elseif ($row->membership == '2') {
-		if ($row->isExpired == '1') {
-
-			return "<span style='color:blue'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
-		}
-		else {
-			return "<span style='color:blue'><strong>".$row->card_id."</strong></span>";
-		}
+		echo 'passed';
+		return "<pre style='color:blue'><p><font size='4'><strong>Economy</strong><font size='4'></pre>";
 	}
 
-	elseif ($row->membership == '1') {
-		if ($row->isExpired == '1') {
-
-			return "<span style='color:black'><strong>".$row->card_id."</strong><p style='color:red'><strong>Expired</strong></span>";
-		}
-		else {
-			return "<span style='color:black'><strong>".$row->card_id."</strong></span>";
-		}
+	else {
+		return "<pre style='color:#D4AF37'><p><font size='4'><strong>Premium</strong><font size='4'></pre>";
 	}
-
 }
 
-function card_v2_output($output = null)
+function card_output($output = null)
 {
 	$this->load->view('card_view.php', $output);
 }

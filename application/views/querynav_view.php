@@ -10,9 +10,9 @@
 
 <h1>Queries</h1>
 <div align='center'>
-	<button type="submit" onclick="location.href='<?php echo site_url('main/query1')?>'">Total customer orders</button>
-	<button type="submit" onclick="location.href='<?php echo site_url('main/query2')?>'">Ranked items by sales</button>
+	<button type="submit" onclick="location.href='<?php echo site_url('main/query1')?>'">Pay Grade vs Staff</button>
+	<button type="submit" onclick="location.href='<?php echo site_url('main/query2')?>'">Staff Type vs Goals</button>
 </div>
-    
+
 </body>
 </html>
